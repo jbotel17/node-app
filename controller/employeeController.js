@@ -7,7 +7,7 @@ import Employee from "../model/employeeModel.js"
          const employeeExist = await Employee.findOne({userName})
  
          if(employeeExist) {
-             return res.status(200).json({message: "Employee already exists"})
+             return res.status(200).json({message: "Employee already exists."})
          }
  
          const savedEmployee = await employeeData.save();
@@ -17,11 +17,11 @@ import Employee from "../model/employeeModel.js"
          res.status(500).json({error: "Internal Server Error"})
      }
  }
-
+ 
 export const fetch = async(req, res) => {
-    try {
-        res.json("Hello World")
-    } catch (error) {
-        res.status(500).json({error: "Internal Server Error"})
+     try {
+         res.json("Hello World")
+     } catch (error) {
+         res.status(500).json({error: "Internal Server Error"})
+     }
     }
-}
